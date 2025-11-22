@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --google-blue: #1a73e8;
+    --google-blue-hover: #1557b0;
+    --google-blue-light: #e8f0fe;
+    --google-green: #34a853;
+    --google-red: #ea4335;
+    --google-yellow: #fbbc04;
+    --google-gray-50: #f8f9fa;
+    --google-gray-100: #f1f3f4;
+    --google-gray-200: #e8eaed;
+    --google-gray-300: #dadce0;
+    --google-gray-400: #bdc1c6;
+    --google-gray-500: #9aa0a6;
+    --google-gray-600: #80868b;
+    --google-gray-700: #5f6368;
+    --google-gray-800: #3c4043;
+    --google-gray-900: #202124;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: var(--google-gray-50);
+    color: var(--google-gray-800);
+    line-height: 1.5;
+}
+
+/* Google-style buttons */
+.btn {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+    font-family: 'Google Sans', sans-serif;
+    letter-spacing: 0.25px;
+}
+
+.btn-primary {
+    background-color: var(--google-blue);
+    color: white;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.btn-primary:hover:not(:disabled) {
+    background-color: var(--google-blue-hover);
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--google-blue);
+    border: 1px solid var(--google-gray-300);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background-color: var(--google-blue-light);
+    border-color: var(--google-blue);
+}
+
+.btn-danger {
+    background-color: var(--google-red);
+    color: white;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+}
+
+.btn-danger:hover:not(:disabled) {
+    background-color: #d33b2c;
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+}
+
+.btn-ghost {
+    background-color: transparent;
+    color: var(--google-blue);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+.btn-ghost:hover:not(:disabled) {
+    background-color: var(--google-blue-light);
+}
+
+/* Google-style inputs */
+.input-group {
+    @apply relative;
+}
+
+.input {
+    @apply w-full px-4 py-3 text-base border-2 rounded-lg transition-all duration-200 focus:outline-none;
+    border-color: var(--google-gray-300);
+    background-color: white;
+    font-family: 'Google Sans', sans-serif;
+}
+
+.input:focus {
+    border-color: var(--google-blue);
+    box-shadow: 0 0 0 1px var(--google-blue);
+}
+
+.input:invalid {
+    border-color: var(--google-red);
+}
+
+.input-label {
+    @apply block text-sm font-medium mb-2;
+    color: var(--google-gray-700);
+    font-family: 'Google Sans', sans-serif;
+}
+
+/* Google-style cards */
+.card {
+    @apply bg-white rounded-2xl p-6 md:p-8;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    border: 1px solid var(--google-gray-200);
+}
+
+.card-elevated {
+    box-shadow: 0 2px 10px 0 rgba(60, 64, 67, 0.3), 0 1px 4px 0 rgba(60, 64, 67, 0.15);
+}
+
+/* Google-style table */
+.table-container {
+    @apply bg-white rounded-2xl overflow-hidden;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    border: 1px solid var(--google-gray-200);
+}
+
+.table {
+    @apply w-full;
+}
+
+.table th {
+    @apply px-6 py-4 text-left text-xs font-semibold uppercase tracking-wider;
+    background-color: var(--google-gray-50);
+    color: var(--google-gray-600);
+    border-bottom: 1px solid var(--google-gray-200);
+    font-family: 'Google Sans', sans-serif;
+}
+
+.table td {
+    @apply px-6 py-4 text-sm;
+    color: var(--google-gray-800);
+    border-bottom: 1px solid var(--google-gray-100);
+    font-family: 'Google Sans', sans-serif;
+}
+
+.table tbody tr:hover {
+    background-color: var(--google-gray-50);
+}
+
+/* Google-style badges and chips */
+.chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium;
+    background-color: var(--google-gray-100);
+    color: var(--google-gray-700);
+    font-family: 'Google Sans', sans-serif;
+}
+
+.chip-primary {
+    background-color: var(--google-blue-light);
+    color: var(--google-blue);
+}
+
+.chip-success {
+    background-color: #e6f4ea;
+    color: var(--google-green);
+}
+
+/* Loading states */
+.loading {
+    @apply animate-pulse bg-gray-200 rounded;
+}
+
+.spinner {
+    @apply animate-spin rounded-full border-2 border-gray-200 border-t-blue-600;
+}
+
+/* Status messages */
+.alert {
+    @apply p-4 rounded-lg flex items-center space-x-3;
+    font-family: 'Google Sans', sans-serif;
+}
+
+.alert-success {
+    background-color: #e6f4ea;
+    color: var(--google-green);
+    border: 1px solid #c8e6c9;
+}
+
+.alert-error {
+    background-color: #fce8e6;
+    color: var(--google-red);
+    border: 1px solid #ffcdd2;
+}
+
+.alert-info {
+    background-color: var(--google-blue-light);
+    color: var(--google-blue);
+    border: 1px solid #bbdefb;
+}
+
+/* Typography */
+.text-display {
+    @apply text-4xl md:text-5xl font-light;
+    font-family: 'Google Sans', sans-serif;
+    color: var(--google-gray-900);
+}
+
+.text-headline {
+    @apply text-2xl md:text-3xl font-normal;
+    font-family: 'Google Sans', sans-serif;
+    color: var(--google-gray-900);
+}
+
+.text-title {
+    @apply text-xl font-medium;
+    font-family: 'Google Sans', sans-serif;
+    color: var(--google-gray-800);
+}
+
+.text-body {
+    @apply text-base;
+    font-family: 'Google Sans', sans-serif;
+    color: var(--google-gray-700);
+}
+
+.text-caption {
+    @apply text-sm;
+    font-family: 'Google Sans', sans-serif;
+    color: var(--google-gray-600);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Focus styles */
+.focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    focus-ring-color: var(--google-blue);
+}
+
+/* Responsive utilities */
+@media (max-width: 480px) {
+    .card {
+        @apply p-3;
+    }
+
+    .btn {
+        @apply px-3 py-2 text-xs;
+    }
+
+    .text-display {
+        @apply text-3xl;
+    }
+
+    .text-headline {
+        @apply text-xl;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .card {
+        @apply p-4;
+    }
+
+    .btn {
+        @apply px-4 py-2 text-sm;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card {
+        @apply p-6;
+    }
+}
+
+@media (min-width: 1025px) {
+    .card {
+        @apply p-6 md:p-8;
+    }
+}
